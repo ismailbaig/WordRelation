@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConceptsRelationDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ConceptsRelation">
+    <Key>
+      <PropertyRef Name="CrID" />
+    </Key>
+    <Property Name="CrID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FileID" Type="varchar" MaxLength="255" />
+    <Property Name="ConceptOne" Type="varchar" MaxLength="255" />
+    <Property Name="ConceptTwo" Type="varchar" MaxLength="255" />
+    <Property Name="RelationType" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="MasterFile">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="255" />
+    <Property Name="FilePath" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="RelationCategory">
+    <Key>
+      <PropertyRef Name="RcID" />
+    </Key>
+    <Property Name="RcID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RelationType" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="ConceptsRelationDBModelStoreContainer">
+    <EntitySet Name="ConceptsRelation" EntityType="Self.ConceptsRelation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MasterFile" EntityType="Self.MasterFile" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelationCategory" EntityType="Self.RelationCategory" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

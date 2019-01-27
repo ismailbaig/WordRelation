@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ConceptsRelationDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ConceptsRelation">
+    <Key>
+      <PropertyRef Name="CrID" />
+    </Key>
+    <Property Name="CrID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FileID" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ConceptOne" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="ConceptTwo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RelationType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="MasterFile">
+    <Key>
+      <PropertyRef Name="FileID" />
+    </Key>
+    <Property Name="FileID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="FilePath" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="RelationCategory">
+    <Key>
+      <PropertyRef Name="RcID" />
+    </Key>
+    <Property Name="RcID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RelationType" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityContainer Name="ConceptsRelationDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ConceptsRelations" EntityType="Self.ConceptsRelation" />
+    <EntitySet Name="MasterFiles" EntityType="Self.MasterFile" />
+    <EntitySet Name="RelationCategories" EntityType="Self.RelationCategory" />
+  </EntityContainer>
+</Schema>

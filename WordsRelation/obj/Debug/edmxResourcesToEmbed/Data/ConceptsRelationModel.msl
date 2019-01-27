@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ConceptsRelationDBModelStoreContainer" CdmEntityContainer="ConceptsRelationDBEntities1">
+    <EntitySetMapping Name="ConceptsRelations">
+      <EntityTypeMapping TypeName="ConceptsRelationDBModel.ConceptsRelation">
+        <MappingFragment StoreEntitySet="ConceptsRelation">
+          <ScalarProperty Name="CrID" ColumnName="CrID" />
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="ConceptOne" ColumnName="ConceptOne" />
+          <ScalarProperty Name="ConceptTwo" ColumnName="ConceptTwo" />
+          <ScalarProperty Name="RelationType" ColumnName="RelationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MasterFiles">
+      <EntityTypeMapping TypeName="ConceptsRelationDBModel.MasterFile">
+        <MappingFragment StoreEntitySet="MasterFile">
+          <ScalarProperty Name="FileID" ColumnName="FileID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FilePath" ColumnName="FilePath" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelationCategories">
+      <EntityTypeMapping TypeName="ConceptsRelationDBModel.RelationCategory">
+        <MappingFragment StoreEntitySet="RelationCategory">
+          <ScalarProperty Name="RcID" ColumnName="RcID" />
+          <ScalarProperty Name="RelationType" ColumnName="RelationType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
