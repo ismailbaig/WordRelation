@@ -28,6 +28,16 @@ namespace WordsRelation
         protected void SaveConceptsRelation_Click(object sender, EventArgs e)
         {
 
+            using (ConceptsRelationDBEntities1 context = new ConceptsRelationDBEntities1())
+            {
+                context.ConceptsRelations.Add(new ConceptsRelation { ConceptOne = txtConcept1.Text, ConceptTwo = txtConcept2.Text,
+                        RelationType = tags1.Text });
+                
+
+                context.SaveChanges();
+            }
+
+
         }
 
         protected void btnUploadFile_Click(object sender, EventArgs e)

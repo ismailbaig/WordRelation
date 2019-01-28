@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="charts.html" />
+    <Content Include="ConceptsRelation.sql" />
     <Content Include="css\bootstrap-table.css" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
