@@ -91,12 +91,7 @@ namespace WordsRelation
                 Session["FileNameFromUser"] = null;
 
             }
-        }
 
-
-
-        protected void btnDisplayFile_Click(object sender, EventArgs e)
-        {
             byte[] byteArray = (byte[])(Session["ByteArray"]);
 
             if (byteArray != null)
@@ -122,7 +117,7 @@ namespace WordsRelation
                     {
                         context.MasterFiles.Add(new MasterFile
                         {
-                            FilePath = convertedDocsDirectory.Name + @"\"+ htmlFileName,
+                            FilePath = convertedDocsDirectory.Name + @"\" + htmlFileName,
                             Name = htmlFileName
                         });
 
@@ -132,7 +127,7 @@ namespace WordsRelation
                     iframeDocViewer.Controls.Add(new LiteralControl("<iframe width='560' height='315' " +
                         "src=" + @"DocxConvertedToHtml\" + htmlFileName + "></iframe><br />"));
 
-                }   
+                }
                 catch (Exception ex)
                 {
                     lblMessage.Text = "Error: " + ex.Message.ToString();
@@ -143,6 +138,57 @@ namespace WordsRelation
                 lblMessage.Text = "You have not specified a file.";
             }
         }
+
+
+
+        //protected void btnDisplayFile_Click(object sender, EventArgs e)
+        //{
+        //    byte[] byteArray = (byte[])(Session["ByteArray"]);
+
+        //    if (byteArray != null)
+        //    {
+        //        try
+        //        {
+        //            DirectoryInfo convertedDocsDirectory =
+        //                new DirectoryInfo(Server.MapPath(DocxConvertedToHtmlDirectory));
+
+        //            if (!convertedDocsDirectory.Exists)
+        //                convertedDocsDirectory.Create();
+
+        //            Guid g = Guid.NewGuid();
+        //            var htmlFileName = Session["FileNameFromUser"].ToString().Replace(".docx", "").Replace(" ", "$sPaC" +
+        //                "" +
+        //                "e$").ToString()
+        //                + "_" + g.ToString() + ".html";
+        //            ConvertToHtml(byteArray
+        //                , convertedDocsDirectory, htmlFileName);
+
+        //            //Store in Database the file name and path
+        //            using (ConceptsRelationDBEntities1 context = new ConceptsRelationDBEntities1())
+        //            {
+        //                context.MasterFiles.Add(new MasterFile
+        //                {
+        //                    FilePath = convertedDocsDirectory.Name + @"\"+ htmlFileName,
+        //                    Name = htmlFileName
+        //                });
+
+        //                context.SaveChanges();
+        //            }
+
+        //            iframeDocViewer.Controls.Add(new LiteralControl("<iframe width='560' height='315' " +
+        //                "src=" + @"DocxConvertedToHtml\" + htmlFileName + "></iframe><br />"));
+
+        //        }   
+        //        catch (Exception ex)
+        //        {
+        //            lblMessage.Text = "Error: " + ex.Message.ToString();
+        //        }
+        //    }
+        //    else
+        //    {
+        //        lblMessage.Text = "You have not specified a file.";
+        //    }
+        //}
 
         private static void ConvertToHtml(byte[] byteArray, DirectoryInfo destDirectory,
             string htmlFileName)

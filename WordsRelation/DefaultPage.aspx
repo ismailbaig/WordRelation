@@ -64,8 +64,8 @@
                                         <asp:Label ID="lblMessage" runat="server" Text="Message"></asp:Label>
                                     </p>
                                     <p>
-                                     <asp:Button class="btn btn-primary" ID="btnDisplayFile" 
-                                         runat="server" Text="Display" OnClick="btnDisplayFile_Click"/>
+                                     <%--<asp:Button class="btn btn-primary" ID="btnDisplayFile" 
+                                         runat="server" Text="Display" OnClick="btnDisplayFile_Click"/>--%>
                                     </p>
 								</div>
 								<div class="form-group">
