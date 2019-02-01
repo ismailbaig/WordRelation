@@ -105,9 +105,7 @@ namespace WordsRelation
                         convertedDocsDirectory.Create();
 
                     Guid g = Guid.NewGuid();
-                    var htmlFileName = Session["FileNameFromUser"].ToString().Replace(".docx", "").Replace(" ", "$sPaC" +
-                        "" +
-                        "e$").ToString()
+                    var htmlFileName = Session["FileNameFromUser"].ToString().Replace(" ", "$sPaCe$").ToString()
                         + "_" + g.ToString() + ".html";
                     ConvertToHtml(byteArray
                         , convertedDocsDirectory, htmlFileName);

@@ -22,8 +22,20 @@ namespace WordsRelation
         {
             using (ConceptsRelationDBEntities1 context = new ConceptsRelationDBEntities1())
             {
-                this.gvFiles.DataSource = context.MasterFiles
-                    .Select(file => new { Name = file.Name }).ToList();
+                List<MasterFile> msfiles = new List<MasterFile>();
+                msfiles = context.MasterFiles.Select(file => file).ToList<MasterFile>();
+
+                foreach(MasterFile m in msfiles)
+                {
+                    m.Name = m.Name.Split(new string[] { ".docx_" }, StringSplitOptions.None)[0].Replace("$sPaCe$", " ") + ".docx";
+                }
+
+                this.gvFiles.DataSource = msfiles;
+
+                //this.gvFiles.DataSource = context.MasterFiles
+                //    .Select( (file) => 
+                //        new { Name = file.Name.Split(new string[] { ".docx_" }, StringSplitOptions.None)[0] }
+                //        ).ToList();
                 this.gvFiles.DataBind();
             }
 

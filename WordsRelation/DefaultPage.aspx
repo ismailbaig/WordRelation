@@ -50,7 +50,7 @@
 									<label>File input</label>
 									<%--<input type="file">--%>
                                     <asp:FileUpload ID="FileUploadContent" runat="server" />
-									<%--<p class="help-block">Example block-level help text here.</p>--%>
+									
                                     <br />
                                     <p>
                                      <asp:Button class="btn btn-primary" ID="btnUploadFile" runat="server"
@@ -61,10 +61,6 @@
                                     </p>
                                     <p>
                                         <asp:Label ID="lblMessage" runat="server" Text="Message"></asp:Label>
-                                    </p>
-                                    <p>
-                                     <%--<asp:Button class="btn btn-primary" ID="btnDisplayFile" 
-                                         runat="server" Text="Display" OnClick="btnDisplayFile_Click"/>--%>
                                     </p>
 								</div>
 								<div class="form-group">
@@ -94,34 +90,16 @@
 										<label>Relation Type</label>
                                          <asp:TextBox ID="tags1" runat="server" class="form-control" value="" maxlength="20" style="width:50%"></asp:TextBox>
 									
-                                       <%-- <div class="ui-widget">
-  <label for="tags">Tags: </label>
-  <asp:TextBox runat="server" id="tags" ></asp:TextBox>
-</div>--%>
-                                        
-                                        <%--	<select class="form-control">
-											<option>Option 1</option>
-											<option>Option 2</option>
-											<option>Option 3</option>
-											<option>Option 4</option>
+                                    ion 4</option>
 										</select>--%>
 									</div>
-							<%--		<div class="form-group">
-										<label>Multiple Selects</label>
-										<select multiple class="form-control">
-											<option>Option 1</option>
-											<option>Option 2</option>
-											<option>Option 3</option>
-											<option>Option 4</option>
-										</select>
-									</div>--%>
-									<%--<button type="submit" class="btn btn-primary">Submit Button</button>--%>
+							
 									<asp:Button class="btn btn-primary" ID="SaveConceptsRelation" runat="server" Text="Save" OnClick="SaveConceptsRelation_Click"/>
 								</div>
 							</form>
 						</div>
 					</div>
-				</div><!-- /.panel-->
+				</div>
 			</div>
 
         <div class="row">

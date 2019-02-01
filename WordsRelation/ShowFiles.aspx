@@ -9,7 +9,9 @@
 <body>
     <form id="frmFiles" runat="server">
         <div>
-            <asp:GridView ID="gvFiles" runat="server" AutoGenerateColumns="False" BackColor="White" BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
+            <asp:GridView ID="gvFiles" runat="server" 
+                AutoGenerateColumns="False" BackColor="White" 
+                BorderColor="#CCCCCC" BorderStyle="None" BorderWidth="1px" CellPadding="3">
                 <Columns>
                     <asp:BoundField DataField="Name" HeaderText="FileName" />
                 </Columns>
