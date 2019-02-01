@@ -17,10 +17,6 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 
-
-
-
-
     <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
 		<div class="row">
 			<ol class="breadcrumb">
@@ -59,6 +55,9 @@
                                     <p>
                                      <asp:Button class="btn btn-primary" ID="btnUploadFile" runat="server"
                                          Text="Upload" OnClick="btnUploadFile_Click"/>
+                                    &nbsp;&nbsp;
+                                     <asp:Button class="btn btn-primary" ID="ShowFiles" runat="server"
+                                         Text="ShowFiles" OnClick="ShowFiles_Click"/>
                                     </p>
                                     <p>
                                         <asp:Label ID="lblMessage" runat="server" Text="Message"></asp:Label>
@@ -75,6 +74,8 @@
                                     <div>
                                      <asp:PlaceHolder ID="iframeDocViewer" runat="server"/>
                                     </div>
+                                    <p>
+                                        &nbsp;</p>
 								</div>
 						
 								</div>
@@ -121,11 +122,12 @@
 						</div>
 					</div>
 				</div><!-- /.panel-->
-			</div><!-- /.col-->
-		<%--	<div class="col-sm-12">
-				<p class="back-link">Lumino Theme by <a href="https://www.medialoot.com">Medialoot</a></p>
-			</div>--%>
-		</div><!-- /.row -->
+			</div>
+
+        <div class="row">
+            
+        </div>
+		</div>
 
 
 
