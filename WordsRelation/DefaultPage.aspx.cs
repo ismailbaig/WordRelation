@@ -240,7 +240,32 @@ namespace WordsRelation
 
         protected void ShowFiles_Click(object sender, EventArgs e)
         {
-            Response.Redirect("ShowFiles.aspx");
+            // Response.Redirect("ShowFiles.aspx");
+            GetFiles();
         }
+
+        private void GetFiles()
+        {
+            using (ConceptsRelationDBEntities1 context = new ConceptsRelationDBEntities1())
+            {
+                List<MasterFile> msfiles = new List<MasterFile>();
+                msfiles = context.MasterFiles.Select(file => file).ToList<MasterFile>();
+
+                foreach (MasterFile m in msfiles)
+                {
+                    m.Name = m.Name.Split(new string[] { ".docx_" }, StringSplitOptions.None)[0].Replace("$sPaCe$", " ") + ".docx";
+                }
+
+                this.gvFiles.DataSource = msfiles;
+
+                //this.gvFiles.DataSource = context.MasterFiles
+                //    .Select( (file) => 
+                //        new { Name = file.Name.Split(new string[] { ".docx_" }, StringSplitOptions.None)[0] }
+                //        ).ToList();
+                this.gvFiles.DataBind();
+            }
+
+        }
+
     }
 }
